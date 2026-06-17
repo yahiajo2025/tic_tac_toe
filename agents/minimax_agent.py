@@ -6,7 +6,7 @@ class MinimaxAgent:
         best_score = -999
         best_move = None
 
-        for i in range(len(board)):
+        for i in range(9):
             if board[i] == 0:
                 board[i] = self.player
                 score = self.minimax(board, False)
@@ -30,7 +30,7 @@ class MinimaxAgent:
 
         if is_maximizing:
             best = -999
-            for i in range(len(board)):
+            for i in range(9):
                 if board[i] == 0:
                     board[i] = self.player
                     best = max(best, self.minimax(board, False))
@@ -38,7 +38,7 @@ class MinimaxAgent:
             return best
         else:
             best = 999
-            for i in range(len(board)):
+            for i in range(9):
                 if board[i] == 0:
                     board[i] = -self.player
                     best = min(best, self.minimax(board, True))
